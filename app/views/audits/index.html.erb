@@ -3,10 +3,10 @@
 <h1>Audits</h1>
 
 <% @audits.each do |audit| %>
-  <h2>Entity <%= "#{audit.auditable_type} ##{audit.auditable_id}" %></h2>
+  <h2>Entity <%= auditable_name(audit) %></h2>
 
   <p>
-    <strong>Changes: </strong><%= audit.audit_changes %>
+    <strong>Changes: </strong><%= audit_changes(audit) %>
   </p>
 
   <p>

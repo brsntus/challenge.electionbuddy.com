@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Original Value</th>
+      <th>New Value</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% changes.each do |field, change| %>
+      <tr>
+        <td><%= field %></td>
+        <td><%= change[0] %></td>
+        <td><%= change[1] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
