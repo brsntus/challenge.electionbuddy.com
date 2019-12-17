@@ -45,6 +45,6 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
       delete question_url(@question)
     end
 
-    assert_redirected_to election_questions_url
+    assert_redirected_to election_questions_url(@election)
   end
 end
