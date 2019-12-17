@@ -25,7 +25,7 @@ module Auditable
     return unless should_audit?(entity, type)
 
     Audit.create!(
-      user: User.first,
+      user: User.current_user,
       auditable: entity,
       audit_changes: get_auditable_changes(entity, type),
       audit_type: type

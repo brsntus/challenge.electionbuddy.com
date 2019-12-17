@@ -3,6 +3,7 @@ require 'test_helper'
 class AuditTest < ActiveSupport::TestCase
   setup do
     @user = users(:one)
+    User.current_user = @user
     @election = Election.new(name: 'Test', start_at: Time.now, end_at: Time.now, user: @user, settings: { visibility: :public })
   end
 
