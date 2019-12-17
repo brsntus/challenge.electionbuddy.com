@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_05_170919) do
+ActiveRecord::Schema.define(version: 2019_12_17_154122) do
 
   create_table "answers", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,18 @@ ActiveRecord::Schema.define(version: 2019_02_05_170919) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "audits", force: :cascade do |t|
+    t.string "auditable_type", null: false
+    t.integer "auditable_id", null: false
+    t.integer "user_id", null: false
+    t.json "audit_changes", null: false
+    t.string "audit_type", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["auditable_type", "auditable_id"], name: "index_audits_on_auditable_type_and_auditable_id"
+    t.index ["user_id"], name: "index_audits_on_user_id"
   end
 
   create_table "elections", force: :cascade do |t|
@@ -60,4 +72,5 @@ ActiveRecord::Schema.define(version: 2019_02_05_170919) do
     t.index ["election_id"], name: "index_voters_on_election_id"
   end
 
+  add_foreign_key "audits", "users"
 end

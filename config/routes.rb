@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :audits
   resources :elections do
     resources :questions, shallow: true do
       resources :answers, shallow: true
