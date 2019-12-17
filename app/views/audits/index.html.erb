@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Audits</h1>
+
+<% @audits.each do |audit| %>
+  <h2>Entity <%= "#{audit.auditable_type} ##{audit.auditable_id}" %></h2>
+
+  <p>
+    <strong>Changes: </strong><%= audit.audit_changes %>
+  </p>
+
+  <p>
+    <strong>Changed by: </strong><%= audit.user_id %>
+  </p>
+
+  <p>
+    <strong>Changed at: </strong><%= audit.created_at %>
+  </p>
+<% end %>
