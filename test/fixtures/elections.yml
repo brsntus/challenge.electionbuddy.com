@@ -4,7 +4,7 @@ one:
   name: MyString
   start_at: 2019-02-05 10:03:49
   end_at: 2019-02-05 10:03:49
-  user: one
+  user_id: 1
   settings:
     visibility: public
 
@@ -12,6 +12,6 @@ two:
   name: MyString2
   start_at: 2019-02-05 10:03:49
   end_at: 2019-02-05 10:03:49
-  user: two
+  user_id: 2
   settings:
     visibility: public

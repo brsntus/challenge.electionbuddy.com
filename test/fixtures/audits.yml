@@ -3,13 +3,13 @@
 one:
   auditable_type: MyString
   auditable_id: 1
-  user: one
+  user_id: 1
   audit_changes: {}
   audit_type: MyString
 
 two:
   auditable_type: MyString
   auditable_id: 1
-  user: two
+  user_id: 2
   audit_changes: {}
   audit_type: MyString
