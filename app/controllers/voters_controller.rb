@@ -6,7 +6,7 @@ class VotersController < ApplicationController
   # GET /voters
   # GET /voters.json
   def index
-    @voters = Voter.all
+    @voters = @election.voters
   end
 
   # GET /voters/1

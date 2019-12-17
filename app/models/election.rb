@@ -1,5 +1,6 @@
 class Election < ApplicationRecord
   has_many :questions
+  has_many :voters
   belongs_to :user
 
   serialize :settings, Hash
